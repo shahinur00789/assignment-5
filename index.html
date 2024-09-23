@@ -26,6 +26,9 @@
         .bg-primary-c{
     background-color:#B4F461 ;
 }
+.btn-text{
+  color: #111111B3;
+}
       </style>
 
                                                                                                                                                   
@@ -45,7 +48,7 @@
 
         <div class="navbar-end">
             <img src="assets/coin.png" alt="">
-            <p>5500 BDT</p>
+            <p><span id="balance">10000</span> BDT</p>
           </div>
       </div>
    </nav>
@@ -59,15 +62,16 @@
    <main class="lg:container mx-auto">
     <!-- button section start -->
      <div class="text-center mb-12">
-        <button class="btn btn-lg mr-4">Donation</button>
-        <button class="btn btn-lg">History</button>
+        <button id="donation-btn" class="btn btn-lg mr-4 bg-primary-c font-bold">Donation</button>
+
+        <button id="history-btn" class="btn btn-lg  btn-text">History</button>
      </div>
 
     <!-- button section end -->
 
 
 
-<section class="space-y-16">
+<section id="donate-card" class="space-y-16">
 <!-- donition card 1 -->
 <div class="grid sm:grid-cols-2 lg:grid-cols-3 p-2 lg:p-4 gap-5 mt-12 shadow-xl rounded-xl bg-gray-100">
   <!-- image section -->
@@ -164,6 +168,16 @@
 
      </div>
 </section>
+
+<!-- histry section -->
+ <section class="history">
+<div id="history-list" class="space-y-4 hidden">
+
+ </div>
+ </section>
+ 
+
+
  
 
    </main>
