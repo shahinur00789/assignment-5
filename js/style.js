@@ -3,19 +3,27 @@ document.getElementById('donate-noakhali-btn')
     event.preventDefault();
     const donateAmountNoakhali = getInputFieldValueById('donate-noakhali-amount');
 
+    
+
     if(donateAmountNoakhali <= 0 || isNaN(donateAmountNoakhali)){
         
         return alert('Invalid Amount')
     }
 
+
+
     const noakhaliBDT = getTextValueById('noakhali-BDT');
+
+     const balance = getTextValueById('balance');
 
     const noakhaliNewBDT = noakhaliBDT + donateAmountNoakhali;
 
     document.getElementById('noakhali-BDT').innerText=noakhaliNewBDT;
 
-    const balance = getTextValueById('balance');
+    
+
     const balanceRemaining = balance - donateAmountNoakhali;
+    
     document.getElementById('balance').innerText=balanceRemaining;
 
 
