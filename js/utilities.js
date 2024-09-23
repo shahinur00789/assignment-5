@@ -1,3 +1,10 @@
+document.getElementById('home-btn').addEventListener('click',function(){
+    window.location.href = '/index.html'
+})
+
+
+
+
 function getInputFieldValueById(id){
     const inputValue = document.getElementById(id).value;
     const inputNumber = parseFloat(inputValue);

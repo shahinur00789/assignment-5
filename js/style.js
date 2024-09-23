@@ -1,3 +1,11 @@
+document.getElementById('blog-btn').addEventListener('click',function(){
+    window.location.href = '/blog.html'
+})
+
+// document.getElementById('home-btn').addEventListener('click',function(){
+//     window.location.href = '/index.html'
+// })
+
 document.getElementById('donate-noakhali-btn')
 .addEventListener('click', function(event){
     event.preventDefault();
