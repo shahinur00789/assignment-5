@@ -1,7 +1,12 @@
 document.getElementById('donate-noakhali-btn')
 .addEventListener('click', function(event){
     event.preventDefault();
-    const donateAmountNoakhali = getInputFieldValueById('donate-noakhali-amount')
+    const donateAmountNoakhali = getInputFieldValueById('donate-noakhali-amount');
+
+    if(donateAmountNoakhali <= 0 || isNaN(donateAmountNoakhali)){
+        
+        return alert('Invalid Amount')
+    }
 
     const noakhaliBDT = getTextValueById('noakhali-BDT');
 
@@ -12,6 +17,7 @@ document.getElementById('donate-noakhali-btn')
     const balance = getTextValueById('balance');
     const balanceRemaining = balance - donateAmountNoakhali;
     document.getElementById('balance').innerText=balanceRemaining;
+
 
     // add tanjection histry
     const historyItem = document.createElement("div");
@@ -37,7 +43,13 @@ historyContainer.insertBefore(historyItem, historyContainer.firstChild)
 document.getElementById('donate-feni-btn')
 .addEventListener('click', function(event){
     event.preventDefault();
-    const donateAmountFeni = getInputFieldValueById('donate-feni-amount')
+    const donateAmountFeni = getInputFieldValueById('donate-feni-amount');
+
+    if(donateAmountFeni <= 0 || isNaN(donateAmountFeni)){
+        
+        return alert('Invalid Amount')
+    }
+
 
     const feniBDT = getTextValueById('feni-BDT');
 
@@ -73,6 +85,13 @@ document.getElementById('donate-injured-btn')
 .addEventListener('click', function(event){
     event.preventDefault();
     const donateAmountInjured = getInputFieldValueById('donate-injured-amount')
+
+
+    if(donateAmountInjured <= 0 || isNaN(donateAmountInjured)){
+        
+        return alert('Invalid Amount')
+    }
+
 
     const injuredBDT = getTextValueById('injured-BDT');
 
@@ -121,14 +140,34 @@ historiTab.addEventListener('click',function(){
        "bg-primary-c",
     "font-bold",
     
-)
+);
 donationTab.classList.add(
     "btn-text"
-)
+);
 document.getElementById('donate-card').classList.add("hidden");
 document.getElementById('history-list').classList.remove("hidden");
 
-
- 
-
 })
+
+
+donationTab.addEventListener('click',function(){
+    donationTab.classList.add(
+        "bg-primary-c",
+        "font-bold",
+       
+    );
+    donationTab.classList.remove(
+        "btn-text"
+    );
+    historiTab.classList.remove(
+        "bg-primary-c",
+    "font-bold",
+    
+    );
+    historiTab.classList.add(
+        "btn-text"
+    );
+    document.getElementById('donate-card').classList.remove("hidden");
+    document.getElementById('history-list').classList.add("hidden");
+})
+
